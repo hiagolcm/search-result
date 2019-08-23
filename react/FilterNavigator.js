@@ -34,6 +34,7 @@ const FilterNavigator = ({
   brands = [],
   loading = false,
   filters = [],
+  preventRouteChange = false,
   hiddenFacets = {},
 }) => {
   const { isMobile } = useDevice()
@@ -90,6 +91,7 @@ const FilterNavigator = ({
             filters={filters}
             tree={tree}
             priceRange={priceRange}
+            preventRouteChange={preventRouteChange}
           />
         </div>
       </div>
@@ -108,14 +110,22 @@ const FilterNavigator = ({
             <FormattedMessage id="store/search-result.filter-button.title" />
           </h5>
         </div>
-        <SelectedFilters filters={selectedFilters} />
+        <SelectedFilters
+          filters={selectedFilters}
+          preventRouteChange={preventRouteChange}
+        />
         <DepartmentFilters
           title={CATEGORIES_TITLE}
           tree={tree}
           isVisible={!hiddenFacets.categories}
           onCategorySelect={navigateToFacet}
+          preventRouteChange={preventRouteChange}
         />
-        <AvailableFilters filters={filters} priceRange={priceRange} />
+        <AvailableFilters
+          filters={filters}
+          priceRange={priceRange}
+          preventRouteChange={preventRouteChange}
+        />
       </div>
       <ExtensionPoint id="shop-review-summary" />
     </div>
