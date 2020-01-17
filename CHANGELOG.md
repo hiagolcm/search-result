@@ -8,11 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-- Search input for facets.
-- Prop `orderFacetsBy` to `SearchResultFlexible`.
+- Facets are now searchable.
+- Facets ordering.
 
 ### Fixed
-- `showFacetQuantity` was not being passed on.
+- `showFacetQuantity` is not being passed on.
 
 ## [3.39.10] - 2019-12-23
 ### Changed
